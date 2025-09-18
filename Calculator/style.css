@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    /* max-width: 1650px; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Display section */
+.display {
+    background: #333333;
+    color: whitesmoke;
+    padding: 1rem;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.input, .output {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    word-break: break-word;
+    padding: 0.5rem;
+}
+
+.input {
+    font-size: 1.6rem;
+    opacity: 0.8;
+    min-height: 40%;
+}
+
+.output {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    min-height: 50%;
+}
+
+/* Keys area */
+.keys-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1px;
+}
+
+.keys {
+    font-size: 1.8rem;
+    border: none;
+    background-color: #fafafa;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    word-break: break-word;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Press animation */
+.keys:active {
+    transform: scale(0.95);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect */
+.keys:hover {
+    background-color:black;
+    color:white;
+}
+
+/* Special button colors */
+.AC {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.DEL {
+    background-color: #4b4ec5;
+    color: white;
+}
+
+.ops {
+    background: white;
+    color: #6842ff;
+}
+
+.opr {
+    background:white;
+    color: #aa84bd;
+}
+
+.operator {
+    color: #f8f9c7;
+}
+
+.brackets {
+    color: #94d5b0;
+}
+
+/* Scrollbar styling (horizontal scroll on input/output if needed) */
+::-webkit-scrollbar {
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .input {
+        font-size: 1.2rem;
+    }
+
+    .output {
+        font-size: 1.5rem;
+    }
+
+    .keys {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .input {
+        font-size: 1rem;
+    }
+
+    .output {
+        font-size: 1.3rem;
+    }
+
+    .keys {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .container {
+        border-radius: 0;
+    }
+}
